@@ -3,6 +3,7 @@ require('dotenv').config()
 
 function createToken(user) {
     return sign({
+
         emailAdd: user.emailAdd,
         Password: user.Password
     },process.env.SECRET_KEY,
@@ -18,10 +19,12 @@ function verifyToken(req,res,next) {
         if (err) {
             res.json({
                 msg: "Token authontication failed."
+
             })
         }
 
         req.decoded =decoded
+
         next();
     })
 }
