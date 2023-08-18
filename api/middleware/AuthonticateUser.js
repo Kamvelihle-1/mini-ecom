@@ -3,30 +3,33 @@ require('dotenv').config()
 
 function createToken(user) {
     return sign({
-        emailAdd :user.emailAdd,
-        userPass: user.userPass
+
+        emailAdd: user.emailAdd,
+        Password: user.Password
     },process.env.SECRET_KEY,
     {
-        expiresIn: "1h"
-    }) 
+        expiresIn:'1h'
+    })   
 }
 
-function verifyToken(req,res,next){
-    const token = req.header["authorization"]
+function verifyToken(req,res,next) {
+    const token = req.headers["authorization"]
 
     return verify(token,process.env.SECRET_KEY,(err,decoded)=>{
-        if(err) {
+        if (err) {
             res.json({
-                msg:"Token authontication failed"
+                msg: "Token authontication failed."
+
             })
         }
 
         req.decoded =decoded
-        next()
+
+        next();
     })
 }
 
-module.exports={
+module.exports = {
     createToken,
     verifyToken
 }
