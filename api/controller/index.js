@@ -27,7 +27,7 @@ bodyParser.json(), (req, res)=>{
 })
 
 //====Routes for products=====
-routes.get('/products',verifyToken,(req,res)=>{
+routes.get('/products',(req,res)=>{
     products.getProducts(req,res)
 })
 routes.get('/product/:id',(req,res)=>{

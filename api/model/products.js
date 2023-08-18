@@ -3,7 +3,7 @@ const db = require('../config')
 class Products{
     getProducts(req,res){
         const query =`
-        SELECT productID, ImagetUrl,productName, Brand,Category,Price, Quantity
+        SELECT productID, ImageUrl,productName, Brand,Category,Price, Quantity
         FROM Products;
         `
         db.query(query,(err,results)=>{

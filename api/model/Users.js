@@ -57,12 +57,6 @@ class Users{
                             emailAdd,
                             Password
                         })
-                        // Save a token
-                        res.cookie("User",
-                        token, {
-                            maxAge: 3600000,
-                            httpOnly: true
-                        })
                         if(compResult) {
                             res.json({
                                 msg: "You have logged in",
@@ -96,11 +90,6 @@ class Users{
             if (err) throw err
 
             let token = createToken(user)
-            res.cookie('UserCookie',token,
-            {
-                maxAge:3600000,
-                httpOnly:true
-            })
             res.json({
                 status:res.statusCode,
                 msg:"You are now registered."
