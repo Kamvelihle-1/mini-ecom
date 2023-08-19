@@ -1,6 +1,6 @@
 const {sign,verify} = require('jsonwebtoken')
 require('dotenv').config()
-
+//Token creation
 function createToken(user) {
     return sign({
 
@@ -11,7 +11,7 @@ function createToken(user) {
         expiresIn:'1h'
     })   
 }
-
+//Token verification
 function verifyToken(req,res,next) {
     const token = req.headers["authorization"]
 
@@ -19,12 +19,10 @@ function verifyToken(req,res,next) {
         if (err) {
             res.json({
                 msg: "Token authontication failed."
-
             })
         }
 
         req.decoded =decoded
-
         next();
     })
 }

@@ -1,5 +1,4 @@
 const db = require('../config')
-
 class Products{
     getProducts(req,res){
         const query =`
@@ -69,6 +68,5 @@ class Products{
             })
         })
     }
-
 }
 module.exports = Products

@@ -32,7 +32,7 @@ class Users{
     }
     login(req,res){
         const {emailAdd, Password} = req.body
-        // query
+        
         const query = `
         SELECT  CONCAT(firstName,'',lastName)'User Name',
         emailAdd, userPwd
