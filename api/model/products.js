@@ -15,7 +15,7 @@ class Products{
     }
     getProduct(req,res){
         const query =`
-        SELECT productID, ImagetUrl,productName, Brand,Category,Price, Quantity
+        SELECT productID, ImageUrl,productName, Brand,Category,Price, Quantity
         FROM Products
         WHERE productID = ${req.params.id};
         `
