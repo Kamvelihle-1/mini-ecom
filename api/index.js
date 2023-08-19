@@ -21,9 +21,9 @@ app.use(
     express.urlencoded({
         extended:false
     }),
-    routes,
     cookieParser(),
-    cors()
+    cors(),
+    routes,
 )
 routes.get('^/$|/challenger',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'./static/html/index.html'))

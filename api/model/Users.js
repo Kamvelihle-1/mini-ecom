@@ -28,6 +28,7 @@ class Users{
                 status:res.statusCode,
                 result
             })
+            
         })
     }
     login(req,res){

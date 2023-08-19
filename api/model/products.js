@@ -19,11 +19,11 @@ class Products{
         FROM Products
         WHERE productID = ${req.params.id};
         `
-        db.query(query,(err,results)=>{
+        db.query(query,(err,result)=>{
             if(err) throw err
             res.json({
                 status:res.statusCode,
-                results
+                result
             })
         })
     }
